@@ -1,2 +1,2 @@
 # mean-formulario
-![](mean-form-20%cap1.jpg)
+![](mean-form-cap1.jpg)
