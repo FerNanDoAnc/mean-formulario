@@ -1,0 +1,33 @@
+  .form {
+    width: 450px;
+  }
+  .div{
+    text-align: center;
+    font-size: 100px;
+    color: #000000;
+  }
+  .cenH{
+    margin-right: 200px;
+    margin-left: 200px;
+  }
+  .cenH p{
+    margin-right: 100px;
+    margin-left: 100px; 
+  }
+  .cenDivForm{
+    margin-right: 200px;
+    margin-left: 200px; 
+  }
+  button.centrado {
+    font-size: 15px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  input::placeholder,
+  textarea,
+  select {
+    color:gray;
+    font-size: 1.1em;
+    font-style: italic;
+  }
+  

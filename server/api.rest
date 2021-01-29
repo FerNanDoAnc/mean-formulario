@@ -1,0 +1,18 @@
+###
+GET http://localhost:4100/api/formularios
+
+###
+POST http://localhost:4100/api/formularios 
+Content-Type: application/json
+
+{
+
+    "nombre": "nombre de test ", 
+    "cargo": "Snr. Developer", 
+    "celular": "123456789", 
+    "email": "22000",
+    "razon": "Trabajo",
+    "necesidad": "Consulta",
+    "mensaje": "Hola busco una respuesta"
+
+}

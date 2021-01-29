@@ -1,0 +1,131 @@
+<div class="row">
+    
+    <div class="row" > 
+        <div class="cenH text-center">
+            <h5 >
+                <p >¡En menos de 24 horas! <br> 
+                    ¡Nuestro equipo de profesionales se contactará para evaluar la necesidad y ofrecer una
+                    solución alineado a sus expectativas
+                </p>
+                
+            </h5>
+        </div><br>
+        
+        <div class="cenDiv">
+
+            <div class="card card-body cenDivForm " >
+                <form #formularioForm="ngForm" (ngSubmit)="addFormulario(formularioForm)">
+                    <div class="form-row ">
+                        <div class="form-group col-md-12 ">
+                            <input type="text" name="nombre" 
+                            class="form-control" placeholder="Nombre y Apeliido"
+                            [(ngModel)]="formularioService.selectedFormulario.nombre" >
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" name="cargo" 
+                            class="form-control" placeholder="Cargo"
+                            [(ngModel)]="formularioService.selectedFormulario.cargo" >
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" name="celular" 
+                            class="form-control" placeholder="Celular"
+                            [(ngModel)]="formularioService.selectedFormulario.celular" >
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <input type="text" name="email" 
+                            class="form-control" placeholder="Email"
+                            [(ngModel)]="formularioService.selectedFormulario.email" >
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" name="razon" 
+                            class="form-control" placeholder="Razón Social"
+                            [(ngModel)]="formularioService.selectedFormulario.razon" >
+                        </div>
+                        <div class="form-group col-md-12">
+                            <select class="form-control" name="necesidad" 
+                                placeholder="Indícanos tu necesidad"
+                                [(ngModel)]="formularioService.selectedFormulario.necesidad">
+                                <option value="" disabled selected hidden>Indicanos tu necesidad</option>
+                                <option>Atracción & Seleccióon</option>
+                                <option>Evaluación Psicolaboral</option>
+                                <option>Capacitación & E-Learning</option>
+                                <option>Consultoria & Desarrollo</option>
+                                <option>Outplacement.</option>
+                              </select>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <textarea class="form-control" rows="3"  
+                            name="mensaje"  placeholder="Mensaje" type="text" 
+                            [(ngModel)]="formularioService.selectedFormulario.mensaje">
+                            </textarea>
+                        </div>
+                        
+                        <button class="btn btn-success centrado">
+                            Enviar Información
+                        </button>
+    
+                    </div>
+                </form>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <br><br><br><br>
+
+</div>
+
+<div class="row">
+    <div class="row">
+        <div class="text-center ">
+            <div class="">
+                <h3>
+                    Listado de Formularios
+                </h3>
+            </div><br>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            Nombre
+                        </th>
+                        <th>
+                            Cargo
+                        </th>
+                        <th>
+                            Celular
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Razón Social
+                        </th>
+                        <th>
+                            Necesidad
+                        </th>
+                        <th>
+                            Mensaje
+                        </th>
+                    </tr>
+                </thead>
+                <tbody> 
+                    <!-- recorrer formulario -->
+                    <tr *ngFor="let formulario of formularioService.formularios">
+                        <td>{{formulario.nombre}}</td>
+                        <td>{{formulario.cargo}}</td>
+                        <td>{{formulario.celular}}</td>
+                        <td>{{formulario.email}}</td>
+                        <td>{{formulario.razon}}</td>
+                        <td>{{formulario.necesidad}}</td>
+                        <textarea>{{formulario.mensaje}}</textarea>
+                        <td>
+                            <button class="btn btn-danger btn-sm" (click)="deleteFormulario(formulario._id)">
+                                <i class="material-icons">delete</i>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
